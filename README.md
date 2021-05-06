@@ -8,4 +8,4 @@ Usually I would just use [WinCompose](https://github.com/SamHocevar/wincompose) 
 If you want to set your own compose key, just change the line `HotKeySet("{CAPSLOCK}", "ComposeFunction")` and replace `{CAPSLOCK}` with your preferred prefix. You can find a list of special keys here: [https://www.autoitscript.com/autoit3/docs/functions/Send.htm](https://www.autoitscript.com/autoit3/docs/functions/Send.htm).
 
 ## Known bugs
-- [ ] Uppercase umlauts (Ä, Ö, Ü) don’t work yet. Apparently either the `@HotKeyPressed` or the `Switch` statement ignore casing.
+- [X] ~~Uppercase umlauts (Ä, Ö, Ü) don’t work yet. Apparently either the `@HotKeyPressed` or the `Switch` statement ignore casing.~~
