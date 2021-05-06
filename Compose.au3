@@ -28,21 +28,20 @@ Func UmlautsFunction()
 EndFunc
 
 Func SendComposeUmlauts()
-    Switch @HotKeyPressed ; The last hotkey pressed
-        Case "a"
+    Select ; The last hotkey pressed
+        Case @HotKeyPressed == "a"
             Send("ä", 1)
-        Case "o"
+        Case @HotKeyPressed == "o"
             Send("ö", 1)
-        Case "u"
+        Case @HotKeyPressed == "u"
             Send("ü", 1)
-        ; FIXME It seems like AutoIt doesn’t support case sensitive hotkeys?
-        Case "A"
+        Case @HotKeyPressed == "A"
             Send("Ä", 1)
-        Case "O"
+        Case @HotKeyPressed == "O"
             Send("Ö", 1)
-        Case "U"
+        Case @HotKeyPressed == "U"
             Send("Ü", 1)
-    EndSwitch
+    EndSelect
     ; Remove hotkeys
     HotKeySet('"')
     HotKeySet("a")
