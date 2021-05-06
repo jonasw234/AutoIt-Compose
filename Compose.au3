@@ -24,6 +24,7 @@ Func UmlautsFunction()
     HotKeySet("A", "SendComposeUmlauts")
     HotKeySet("O", "SendComposeUmlauts")
     HotKeySet("U", "SendComposeUmlauts")
+    HotKeySet('"') ; Unset umlauts prefix hotkey
     HotKeySet("s") ; Unset ß hotkey
 EndFunc
 
@@ -43,7 +44,6 @@ Func SendComposeUmlauts()
             Send("Ü", 1)
     EndSelect
     ; Remove hotkeys
-    HotKeySet('"')
     HotKeySet("a")
     HotKeySet("o")
     HotKeySet("u")
@@ -53,8 +53,9 @@ Func SendComposeUmlauts()
 EndFunc
 
 Func Compose_s()
-    HotKeySet("s", "SendCompose_ss")
     HotKeySet('"') ; Unset umlaut hotkeys
+    HotKeySet("s") ; Make sure that “s” hotkey doesn’t stack
+    HotKeySet("s", "SendCompose_ss")
 EndFunc
 
 Func SendCompose_ss()
